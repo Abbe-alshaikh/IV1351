@@ -60,7 +60,7 @@ SELECT * from (SELECT COUNT(*) as number_of_lessons,instructor_id as instructor 
 -- For each ensemble tell whether it's full booked, has 1-2 seats left or has more seats left. --
 -- Hint: you might want to use a CASE statement in your query to produce the desired output.
 
-
+CREATE MATERIALIZED VIEW number_of_lessons AS
 SELECT lesson.lesson_type AS type, lesson.date AS date_of_lesson , ensemble.genre AS genre ,
 
 (CASE 
