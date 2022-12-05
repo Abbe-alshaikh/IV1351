@@ -58,7 +58,7 @@ SELECT * from (SELECT COUNT(*) as number_of_lessons,instructor_id as instructor 
 ------------------------------------
 -- List all ensembles held during the next week, sorted by music genre and weekday. 
 -- For each ensemble tell whether it's full booked, has 1-2 seats left or has more seats left. --
-Hint: you might want to use a CASE statement in your query to produce the desired output.
+-- Hint: you might want to use a CASE statement in your query to produce the desired output.
 
 
 SELECT lesson.lesson_type AS type, lesson.date AS date_of_lesson , ensemble.genre AS genre ,
