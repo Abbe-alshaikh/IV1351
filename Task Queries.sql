@@ -75,21 +75,3 @@ GROUP BY type , date_of_lesson , genre, maximum_number_of_students ;
 
 
 
---------------------
-
--- List all ensembles held during the next week, sorted by music genre and weekday. 
--- For each ensemble tell whether it's full booked, has 1-2 seats left or has more seats left. 
-
-CREATE MATERIALIZED VIEW number_of_lessons AS
-	SELECT lesson.lesson_type AS type, lesson.date AS date_of_lesson , ensemble.genre AS genre ,
-
-	(CASE 
-	WHEN COUNT (student_ensemble.student_id) = (maximum_number_of_students) THEN 'Fully booked'
-	WHEN COUNT (student_ensemble.student_id) = (maximum_number_of_students - 1) THEN '1 seats left'
-        WHEN COUNT (student_ensemble.student_id) = (maximum_number_of_students - 2) THEN '2 seats left'
-        WHEN COUNT (student_ensemble.student_id) < (maximum_number_of_students - 2) THEN 'Many free seats'
-    END)
-	FROM lesson, ensemble, student_ensemble
-	WHERE lesson.id = ensemble.lesson_id AND ensemble.lesson_id = student_ensemble.lesson_id AND date_trunc('week', current_date + interval '1 week')=date_trunc('week', date)
-	GROUP BY type , date_of_lesson , genre, maximum_number_of_students ;
-
