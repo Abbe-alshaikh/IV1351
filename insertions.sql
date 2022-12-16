@@ -319,8 +319,8 @@ INSERT INTO lesson (id, level, date, instrument_type, lesson_type, instructor_id
 '2022-02-05','piano', 'individual', 2);
 INSERT INTO lesson (id, level, date, instrument_type, lesson_type, instructor_id)VALUES (54,'advanced', 
 '2022-02-14','saxofon', 'individual', 4);
-INSERT INTO lesson (id, level, date, instrument_type, lesson_type, instructor_id)VALUES (55,'advanced', '2022-02-12', 
-'saxofon', 'individual', 5);
+INSERT INTO lesson (id, level, date, instrument_type, lesson_type, instructor_id)VALUES (55,'advanced',
+'2022-02-12','saxofon', 'individual', 5);
 INSERT INTO lesson (id, level, date, instrument_type, lesson_type, instructor_id)VALUES (56,'advanced', 
 '2022-02-08','saxofon', 'individual',  4);
 INSERT INTO lesson (id, level, date, instrument_type, lesson_type, instructor_id)VALUES (57,'advanced', 
